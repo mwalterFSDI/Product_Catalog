@@ -2,7 +2,7 @@
 # -*- coding: utf8 -*-
 """Routes definitions"""
 
-
+from flask import render_template
 from app import app
 from datetime import datetime
 
@@ -15,6 +15,10 @@ def version():
         "server time": datetime.now().strftiime("%F%H:%M:%S")
     }
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+    
 @app.route("/products")
 def get_products():
     """Retrieve all products"""
