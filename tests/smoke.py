@@ -13,12 +13,12 @@ import requests
 BASE_URL="http://127.0.0.1:5000"
 
 def test_get_all():
-    url = "%s%s" % (BASE_URL, "/")
+    url = "%s%s" % (BASE_URL, "/products")
     out = requests.get(url)
     assert out.text == "Return all products"
     
 def test_create_product():
-    url = "%s%s" % (BASE_URL, "/")
-    sample_data = {"product_name": "Banana", "price": 100.00, "quantity: 5"}
+    url = "%s%s" % (BASE_URL, "/products")
+    sample_data = {"product_name": "Banana", "price": 100.00, "quantity": 5}
     out = requests.post(url, data=sample_data)
     assert out.text == "Create new product"

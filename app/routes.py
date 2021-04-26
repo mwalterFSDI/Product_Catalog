@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
-"""Routes definitions"""
+"""Route definitions"""
 
 from flask import render_template
 from app import app
@@ -12,7 +12,7 @@ def version():
         "ok": True, 
         "message": "success",
         "version": "1.0.0",
-        "server time": datetime.now().strftiime("%F%H:%M:%S")
+        "server time": datetime.now().strftiime("%F %H:%M:%S")
     }
 
 @app.route("/")
@@ -22,16 +22,21 @@ def index():
 @app.route("/products")
 def get_products():
     """Retrieve all products"""
-    pass
+    return "Return all products"
 
 @app.route("/products/<int:pid>")
 def get_product_detail(pid):
     """retrieve a single product"""
-    pass
+    return "Single product detail"
+
 @app.route("/products/<int:pid>", methods=["PUT"])
+    """Update a single product"""
+    return "Single product update"
+
+@app.route("/products", methods=["POST"])
     """Create a new product"""
-    pass
+    return "Create new product"
 
 @app.route("/products/<int:pid>", methods=["DELETE"])
-    """Soft delete a single product""
+    """Soft delete a single product"""
     return "Soft delete a product"
