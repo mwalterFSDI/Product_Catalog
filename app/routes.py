@@ -30,13 +30,16 @@ def get_product_detail(pid):
     return "Single product detail"
 
 @app.route("/products/<int:pid>", methods=["PUT"])
+def update_product(pid):
     """Update a single product"""
     return "Single product update"
 
 @app.route("/products", methods=["POST"])
+def create_product():
     """Create a new product"""
     return "Create new product"
 
 @app.route("/products/<int:pid>", methods=["DELETE"])
+def delete_product(pid):
     """Soft delete a single product"""
     return "Soft delete a product"
