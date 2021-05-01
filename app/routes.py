@@ -3,7 +3,7 @@
 """Route definitions"""
 
 from flask import render_template
-from app import app
+from app import app, db
 from datetime import datetime
 
 @app.route("/version")
